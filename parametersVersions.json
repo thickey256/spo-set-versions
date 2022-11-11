@@ -1,0 +1,34 @@
+{
+    "tenantId": {
+        "Value": "75e67881-b174-484b-9d30-c581c7ebc177",
+        "Description": "Id of the tenant. Can be found in the Azure Active Directory blade."
+    },
+    "clientId": {
+        "Value": "34f4c95f-0249-4568-a3b7-90eb4483a589",
+        "Description": "Client Id of the SetLibraryVersion AAD application. Must have Sites.FullControl or Sites.Selected for sites to be processed. Both MSGraph and SharePoint APIs"
+    },
+    "thumbprint" : {
+        "Value": "46EF268F89C9B78E023D9927013413FE77553119",
+        "Description": "Thumbprint of the certific from the device running Set Version script."
+    },
+    "inputCSV": {
+        "Value": "./SitesToProcess.csv",
+        "Description": "CSV file with list of sites to process"
+    },
+    "majorVersionCount": {
+        "Value": "52",
+        "Description": "Numner of major versions to configure on the Libraries (0 will disable major versions)"
+    },
+    "minorVersionCount": {
+        "Value": "0",
+        "Description": "Numner of minor versions to configure on the Libraries (0 will disable minor versions)"
+    },
+    "whatIfMode": {
+        "Value": true,
+        "Description": "If true, storage saving will be calculated but files won't be deleted."
+    },
+    "deleteOldMajorVersions": {
+        "Value": true,
+        "Description": "If true, item versions that are less than the count will be removed."
+    }
+}
