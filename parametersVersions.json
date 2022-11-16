@@ -24,7 +24,7 @@
         "Description": "Numner of minor versions to configure on the Libraries (0 will disable minor versions)"
     },
     "whatIfMode": {
-        "Value": true,
+        "Value": false,
         "Description": "If true, storage saving will be calculated but files won't be deleted."
     },
     "deleteOldMajorVersions": {

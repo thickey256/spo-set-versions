@@ -171,12 +171,12 @@ function GetChildrensChildren($children, $driveId, $majorVersionCount)
         else {
 
             # don't forget versions
-            $versionHistory = Get-MgDriveItemVersion -DriveId $driveId -DriveItemId $child.Id -Property "Id, Size" -All
+            $versionHistory = Get-MgDriveItemVersion -DriveId $driveId -DriveItemId $child.Id -Property "Id, LastModifiedDateTime, Size" -All
 
             $majorVersionPlus1 = [int]($majorVersionCount) + 1
             if (@($versionHistory).Length -gt $majorVersionPlus1)
             {
-                $outdatedVersions = $versionHistory | sort Id -Descending | select -Skip $majorVersionPlus1
+                $outdatedVersions = $versionHistory | sort LastModifiedDateTime -Descending | select -Skip $majorVersionPlus1
                 Write-Host "   $(@($outdatedVersions).Length) versions to remove, from $($child.Id)" -ForegroundColor Magenta
 
                 if($parameters.whatIfMode.Value)
